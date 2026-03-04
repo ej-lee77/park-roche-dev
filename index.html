@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PARKROCHE</title>
     <link rel="shortcut icon" href="./img/icon/favicon.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./css/font.css">
     <link rel="stylesheet" href="./css/common.css">
     <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
     <header>
-        <h1 class="logo"><a href="#"><img src="/img/icon/logo.svg" alt="파크로쉬"></a></h1>
+        <h1 class="logo"><a href="#"><img src="/img/icon/logo-white.svg" alt="파크로쉬"></a></h1>
         <nav>
             <ul class="main-menu list">
                 <li>
@@ -97,25 +98,24 @@
         </ul>
     </header>
 
-    <div class="main-slider-wrap">
-        <ul class="main-slider-list list">
-            <li><img src="./img/main/main-slider1.jpg" alt="요가"></li>
-            <li><img src="./img/main/main-slider2.jpg" alt="요가"></li>
-            <li><img src="./img/main/main-slider3.jpg" alt="요가"></li>
-            <li><img src="./img/main/main-slider4.jpg" alt="요가"></li>
+    <div class="main-slider-wrap swiper">
+        <ul class="main-slider-list list swiper-wrapper">
+            <li class="swiper-slide"><img src="./img/main/main-slider1.jpg" alt="요가"></li>
+            <li class="swiper-slide"><img src="./img/main/main-slider2.jpg" alt="요가"></li>
+            <li class="swiper-slide"><img src="./img/main/main-slider3.jpg" alt="요가"></li>
+            <li class="swiper-slide"><img src="./img/main/main-slider4.jpg" alt="요가"></li>
         </ul>
-        <div class="reserve-wrap">
-            <ul class="reserve-list list">
+        <div class="top-reserve-wrap">
+            <ul class="top-reserve-list list">
                 <li>
-                    <div><a href="#"><span>CHECK IN</span><span>2026.03.01</span></a></div>
-                    <div><a href="#"><span>CHECK OUT</span><span>2026.03.01</span></a></div>
+                    <div><a href="#"><span>CHECK IN~CHECK OUT</span><span>2026.03.01~2026.03.03</span></a></div>
                 </li>
                 <li>
                     <div><a href="#"><span>ROOMS</span><span>1</span></a></div>
                     <div><a href="#"><span>ADULTS</span><span>2</span></a></div>
                     <div><a href="#"><span>CHILDREN</span><span>0</span></a></div>
                 </li>
-                <li><a href="#">RESERVE<img src="" alt=""></a></li>
+                <li><a href="#">RESERVE<img src="./img/icon/reserve-arrow.png" alt="예약화살표"></a></li>
             </ul>
         </div>
     </div>
@@ -126,7 +126,7 @@
             <div class="inner">
                 <ul class="room-list list">
                     <li><a href="#"><img src="./img/main/sugam-room.png" alt="숙암 룸"><span>SUGAM ROOM</span></a></li>
-                    <li><span>where to</span><strong>STAY</strong></li>
+                    <li class="title"><div><span>where to</span><strong>STAY</strong></div></li>
                     <li><a href="#"><img src="./img/main/sugam-suite.png" alt="숙암 스위트"><span>SUGAM SUITE</span></a></li>
                     <li><a href="#"><img src="./img/main/sugam-corner-suite.png" alt="숙암 코너 스위트"><span>SUGAM CORNER SUITE</span></a>
                     </li>
@@ -343,5 +343,7 @@
 
     <aside class="top-btn"></aside>
     <aside class="reserve-wrap"></aside>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="./js/index.js"></script>
 </body>
 </html>
