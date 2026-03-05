@@ -20,6 +20,7 @@ header{
     width: 140px;
     margin: 0 auto;
     margin-bottom: 20px;
+    margin-top: 5px;
 }
 .main-menu{
     justify-content: center;
@@ -30,7 +31,7 @@ header{
 }
 .gnb-list{
     position: absolute;
-    top: 5px;
+    top: 10px;
     right: 10px;
     font-size: 0.88em;
     align-items: center;
@@ -115,6 +116,7 @@ section{
     font-size: 4em;
     font-weight: 700;
 }
+
 /* room */
 .room-wrap .title div{
     position: absolute;
@@ -170,5 +172,73 @@ section{
     right: -25px;
 }
 
+/* wellness */
+.wellness-list>li{
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+.wellness-list>li.active {
+    flex: 1;
+    border: 1px solid rgba(255, 255, 255, 0);
+}
+.wellness-list>li>a::after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    background: rgba(0, 0, 0, 0.8);
+}
+.wellness-list>li.active>a::after{
+    background: rgba(0, 0, 0, 0.3);
+}
+.wellness-list>li.active:hover>a::after {
+    background: rgba(0, 0, 0, 0.1);
+}
+.wellness-list>li img{
+    aspect-ratio: 1/4;
+    object-fit: cover;
+    width: 90px;
+    height: 400px;
+}
+.wellness-list>li.active img{
+    aspect-ratio: unset;
+    width: 100%;
+}
+.wellness-list>li>div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.wellness-list>li>div::after{
+    content: "";
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: url(../img/icon/reserve-arrow.png);
+    position: absolute;
+    bottom: -30px;
+}
+.wellness-list>li.active>div::after {
+    display: none;
+}
+.wellness-list>li>div .wellness-title {
+    font-size: 1em;
+    font-weight: 600;
+    writing-mode: vertical-rl;
+}
+.wellness-list>li>div .wellness-text {
+    display: none;
+}
+.wellness-list>li.active>div .wellness-title{
+    font-size: 2em;
+    writing-mode: unset;
+    margin-bottom: 10px;
+}
+.wellness-list>li.active>div .wellness-text {
+    display: block;
+}
 
 
