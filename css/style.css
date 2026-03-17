@@ -1,6 +1,7 @@
 body{
     background: #FEF8F2;
     color: white;
+    overflow-x: hidden;
 }
 .inner{
     max-width: 1440px;
@@ -98,6 +99,7 @@ header{
 /* ------main-------------------------------------------- */
 section{
     margin-top: 100px;
+    position: relative;
 }
 h2{
     font-size: inherit;
@@ -326,4 +328,197 @@ h2{
 }
 .dinner-img-text-list>li.active p::after {
     background: #3B3B3B;
+}
+
+/* specialoffers */
+.special-offer-menu-list-wrap{
+    position: relative;
+    margin-bottom: 20px;
+}
+.special-offers-wrap .title{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    font-size: 3em;
+    font-weight: 700;
+}
+.special-offers-wrap>.special-offer-menu-list-wrap>.img-box {
+    height: 300px;
+}
+.special-offers-wrap>.special-offer-menu-list-wrap>.img-box img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+.special-offer-menu-list{
+    gap: 20px;
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.special-offer-menu-list>li a {
+    display: block;
+    padding: 8px 10px;
+    background: #3f3f3f63;
+    border-radius: 20px;
+    font-size: 0.88em;
+}
+.special-offer-menu-list>li:hover a {
+    background: #3f3f3fb6;
+}
+.special-offer-list img{
+    max-width: 100%;
+    object-fit: cover;
+    aspect-ratio: 1.4/1;
+}
+.special-offer-list .text-box{
+    color: #3B3B3B;
+}
+.special-offer-list-wrap{
+    overflow: visible;
+
+    .swiper-button-next svg,
+    .swiper-button-prev svg {
+        display: none;
+    }
+
+    .swiper-button-next::after{
+        content: "";
+        display: block;
+        width: 30px;
+        height: 30px;
+        background-color: #3f3f3f63;
+        border-radius: 50%;
+        background-image: url(../img/icon/arrow-white.png);
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .swiper-button-prev::after {
+        content: "";
+        display: block;
+        width: 30px;
+        height: 30px;
+        background-color: #3f3f3f63;
+        border-radius: 50%;
+        background-image: url(../img/icon/arrow-white.png);
+        background-repeat: no-repeat;
+        background-position: center;
+        transform: rotate(180deg);
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev,
+    ~.swiper-button-next,
+    ~.swiper-button-prev {
+        top: var(--swiper-navigation-top-offset, 110%);
+    }
+
+    .swiper-button-prev{
+        left: 50%;
+        transform: translateX(-80%);
+    }
+    .swiper-button-next {
+        right: 50%;
+        transform: translateX(100%);
+    }
+
+}
+
+
+/* contact */
+.contact-wrap{
+    margin-top: 150px;
+}
+.contact-wrap .inner{
+    display: flex;
+    justify-content: end;
+    gap: 20px;
+}
+.contact-wrap .inner .text-box{
+    color: #3B3B3B;
+}
+.contact-wrap .inner .text-box .title{
+    font-size: 2em;
+    font-weight: 700;
+    padding: 20px 0;
+    border-bottom: 2px solid #3B3B3B;
+    margin-bottom: 20px;
+}
+.contact-wrap .inner .text-box p{
+    margin-bottom: 20px;
+}
+.contact-wrap .inner div img{
+    object-fit: cover;
+}
+
+
+/* ************footer************* */
+footer{
+    margin-top: 100px;
+    font-size: 0.88em;
+}
+.util-menu{
+    background: #fbfbfb;
+    color: #4e4e4e;
+    padding: 10px;
+    gap: 10px;
+    font-size: 0.88em;
+    align-items: center;
+}
+
+.util-menu li{
+   border-bottom: 1px solid #4e4e4e;
+}
+.footer-bg{
+    position: relative;
+    background: url(../img/main/footer-bg.jpg) no-repeat center center;
+    height: 400px;
+}
+.footer-bg>p{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+}
+.footer-bg>.footer-right{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    gap: 20px;
+}
+.footer-bg>.footer-right .sns-list {
+    gap: 10px;
+    align-items: center;
+}
+.footer-bg>.footer-right .sns-list li{
+    width: 60%;
+}
+.footer-bg>.footer-right .sns-list li img{
+    object-fit: cover;
+}
+.footer-bg>.footer-right .family-site{
+    position: relative;
+}
+.footer-bg>.footer-right .family-site>a{
+    border: 1px solid #fff;
+    padding: 10px 40px 10px 20px;
+    background: url(../img/icon/arrow-white-up.png) no-repeat 90% center;
+    display: block;
+}
+.footer-bg>.footer-right .family-site .family-list{
+    position: absolute;
+    top: -170px;
+    height: 0;
+    overflow: hidden;
+}
+.footer-bg>.footer-right .family-site .family-list li a{
+    border: 1px solid #fff;
+    border-bottom: none;
+    padding: 10px 20px;
+    display: block;
+    width: 100%;
+    background: #fbfbfb2e;
+    backdrop-filter: blur(10px);
 }
