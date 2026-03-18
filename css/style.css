@@ -522,3 +522,32 @@ footer{
     background: #fbfbfb2e;
     backdrop-filter: blur(10px);
 }
+
+/* -------------aside----------------- */
+.reserve-wrap{
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    text-align: center;
+    background: #816C5B;
+    padding: 10px 6px;
+    border-radius: 45%;
+    z-index: 100;
+}
+.reserve-wrap>a {
+    display: flex;
+    flex-direction: column;
+}
+.reserve-wrap .text-box{
+    font-size: 0.88em;
+}
+.top-btn{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #ad937d;
+    border-radius: 50%;
+    padding: 10px;
+    z-index: 100;
+}
+
