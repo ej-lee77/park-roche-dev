@@ -16,6 +16,11 @@ header{
     position: fixed;
     z-index: 100;
     width: 100%;
+    padding-bottom: 10px;
+}
+header.active{
+    background: #ad937da8;
+    backdrop-filter: blur(10px);
 }
 .logo{
     width: 140px;
@@ -27,8 +32,45 @@ header{
     justify-content: center;
     gap: 20px;
 }
-.sub-menu{
-    display: none;
+.main-menu>li{
+    position: relative;
+}
+.main-menu>li>.sub-menu{
+    /* display: none; */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ad937d;
+    margin-top: 10px;
+    height: 0;
+    overflow: hidden;
+}
+.sub-menu>li{
+    width: 150px;
+}
+.sub-menu>li:hover a{
+    background: #816C5B;
+}
+.main-menu>li>.sub-menu>li a,
+.submenu-wrap>.sub-menu>li a{
+    display: block;
+    padding: 5px 10px;
+}
+
+.main-menu>li>.submenu-wrap{
+    position: absolute;
+    margin-top: 10px;
+    background: #ad937d;
+    /* display: none; */
+    display: flex;
+    gap: 20px;
+    height: 0;
+    overflow: hidden;
+}
+.submenu-wrap>.sub-menu>li>strong{
+    padding: 5px;
+    display: block;
+    border-bottom: solid 1px #fff;
 }
 .gnb-list{
     position: absolute;
@@ -533,6 +575,7 @@ footer{
     padding: 10px 6px;
     border-radius: 45%;
     z-index: 100;
+    display: none;
 }
 .reserve-wrap>a {
     display: flex;
@@ -549,5 +592,6 @@ footer{
     border-radius: 50%;
     padding: 10px;
     z-index: 100;
+    display: none;
 }
 
