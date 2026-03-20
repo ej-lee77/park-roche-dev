@@ -53,3 +53,26 @@ topBtn.addEventListener("click", (e)=>{
 });
 
 // 서브메뉴
+let mainMenuLi = document.querySelectorAll(".main-menu>li");
+let subMenuWell = document.querySelector(".submenu-wellness");
+let subMenuWrap = subMenuWell.querySelector(".submenu-wrap");
+
+mainMenuLi.forEach((li, id)=>{
+    let subMenu = li.querySelector(".sub-menu");
+
+    li.addEventListener("mouseover", ()=>{
+        let subHeight = subMenu.scrollHeight;
+        subMenu.style.height = subHeight + "px";
+    });
+
+    li.addEventListener("mouseout", ()=>{
+        subMenu.style.height = 0;
+        subMenuWrap.style.height = 0;
+    })
+});
+
+subMenuWell.addEventListener("mouseover", ()=>{
+    let subWrapHeight = subMenuWrap.scrollHeight;
+    subMenuWrap.style.height = subWrapHeight + "px";
+});
+
