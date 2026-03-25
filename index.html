@@ -97,7 +97,7 @@
         </nav>
         <ul class="gnb-list list">
             <li><a href="#"><img src="./img/icon/header-user.png" alt="마이페이지"></a></li>
-            <li>
+            <li class="lang-wrap">
                 <a href="#">ENG</a>
                 <ul class="lang-list">
                     <li><a href="#">ENG</a></li>
@@ -422,9 +422,24 @@
         </div>
     </footer>
 
+    <div class="reserve-wrap">
+        <h2 class="reserve-logo"><img src="./img/icon/logo-white.svg" alt="park roche"></h2>
+        <p class="close-btn"><a href="#"><img src="./img/icon/close.png" alt="close"></a></p>
+        <div id='calendar'></div>
+        <div class="select-box">
+            <div class="date"><h3>CHECK IN~CHECK OUT</h3>2026</div>
+            <div class="room"><h3>ROOM</h3><button class="plus-btn"></button><span>1</span><button class="minus-btn"></button></div>
+            <div class="adult"><h3>ADULT</h3><button class="plus-btn"></button><span>1</span><button class="minus-btn"></button></div>
+            <div class="child"><h3>CHILD</h3><button class="plus-btn"></button><span>0</span><button class="minus-btn"></button></div>
+        </div>
+    </div>
+
     <aside class="top-btn"><a href="#"><span class="img-box"><img src="./img/icon/arrow-up.png" alt="TOP"></span></a></aside>
-    <aside class="reserve-wrap"><a href="#"><span class="img-box"><img src="./img/icon/reserve.png" alt="예약하기"></span><span class="text-box">예약하기</span></a></aside>
+    <aside class="reserve-btn"><a href="#"><span class="img-box"><img src="./img/icon/reserve.png" alt="예약하기"></span><span class="text-box">예약하기</span></a></aside>
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    <script src="./js/index.global.min.js"></script>
+    <script src='./js/index.global.js'></script>
     <script src="./js/index.js"></script>
 </body>
 </html>

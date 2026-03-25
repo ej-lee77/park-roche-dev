@@ -93,6 +93,11 @@ header.active{
     /* display: none; */
     position: absolute;
     background: #c3c3c3;
+    left: 50%;
+    margin-top: 10px;
+    height: 0;
+    overflow: hidden;
+    transition: 0.3s;
 }
 .lang-list>li a{
     padding: 10px 5px;
@@ -576,7 +581,7 @@ footer{
 }
 
 /* -------------aside----------------- */
-.reserve-wrap{
+.reserve-btn{
     position: fixed;
     bottom: 90px;
     right: 20px;
@@ -587,11 +592,11 @@ footer{
     z-index: 100;
     display: none;
 }
-.reserve-wrap>a {
+.reserve-btn>a {
     display: flex;
     flex-direction: column;
 }
-.reserve-wrap .text-box{
+.reserve-btn .text-box{
     font-size: 0.88em;
 }
 .top-btn{
@@ -603,5 +608,52 @@ footer{
     padding: 10px;
     z-index: 100;
     display: none;
+}
+
+.reserve-wrap{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 505px;
+    height: 600px;
+    overflow-y: scroll;
+    background: #816C5B;
+    z-index: 10000;
+}
+.reserve-wrap>h2{
+    margin-top: 20px;
+    text-align: center;
+}
+.reserve-wrap>h2 img{
+    padding: 10px;
+    width: 200px;
+}
+.reserve-wrap .close-btn{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 10px;
+    right: 10px;
+}
+
+#calendar{
+    margin-top: 10px;
+    padding: 0 10px;
+}
+/* #calendar .fc-scroller{
+    overflow: hidden !important;
+} */
+
+.reserve-wrap .select-box{
+    padding: 0 10px;
+    margin: 20px 0;
+    font-size: 1.3em;
+}
+.reserve-wrap .select-box h3{
+    font-size: 0.88rem;
+}
+.reserve-wrap .select-box>div{
+    margin-top: 10px;
 }
 

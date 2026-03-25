@@ -25,7 +25,7 @@ let header = document.querySelector("header");
 let headerHeight = header.offsetHeight;
 let mainSliderHeight = document.querySelector(".main-slider-wrap").offsetHeight;
 let topBtn = document.querySelector('.top-btn');
-let reserveWrap = document.querySelector(".reserve-wrap");
+let reserveWrap = document.querySelector(".reserve-btn");
 
 // 스크롤에 따라서 보여주기 숨기기
 document.addEventListener("scroll", ()=>{
@@ -75,4 +75,131 @@ subMenuWell.addEventListener("mouseover", ()=>{
     let subWrapHeight = subMenuWrap.scrollHeight;
     subMenuWrap.style.height = subWrapHeight + "px";
 });
+
+// 언어변경
+let langWrap = document.querySelector(".lang-wrap");
+let langList = langWrap.querySelector(".lang-list");
+
+langWrap.addEventListener("click", (e)=>{
+    e.preventDefault();
+    
+    let langheight = langList.scrollHeight;
+    langList.style.height = langheight + "px";
+});
+
+langList.addEventListener("mouseleave", ()=>{
+    langList.style.height = 0;
+});
+
+let langListA = langList.querySelectorAll("li a");
+
+langListA.forEach(a =>{
+    a.addEventListener("click", ()=>{
+        let langWrapA = document.querySelector(".lang-wrap>a");
+        console.log(a.value);
+        langWrapA.textContent = a.textContent;
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+	var calendarEl = document.getElementById('calendar');
+	var calendar = new FullCalendar.Calendar(calendarEl, {
+		initialView: 'dayGridMonth'
+	});
+	calendar.render();
+});
+
+
+// calendar
+// 달력 시작날을 오늘로 하기
+const date = new Date();
+const year = date.getFullYear();
+const month = ('0' + (date.getMonth() + 1)).slice(-2);
+const day = ('0' + (date.getDate())).slice(-2);
+const today = `${year}-${month}-${day}`;
+
+document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new FullCalendar.Calendar(calendarEl, {
+      headerToolbar: {
+        left: 'title',
+        center: '',
+        right: 'today next,nextYear'
+      },
+      initialDate: today,
+      dayCellContent: function(arg) {
+        return arg.date.getDate();
+      },
+      customButtons: {
+        today: {
+          text: "오늘",
+          click: function () {
+            calendar.today();
+          },
+        },
+      },
+      locale: "ko",
+      selectable: true,
+      dayMaxEvents: true, // allow "more" link when too many events
+      events: [
+        {
+          title: 'All Day Event',
+          start: '2023-01-01'
+        },
+        {
+          title: 'Long Event',
+          start: '2023-01-07',
+          end: '2023-01-10'
+        },
+        {
+          groupId: 999,
+          title: 'Repeating Event',
+          start: '2023-01-09T16:00:00'
+        },
+        {
+          groupId: 999,
+          title: 'Repeating Event',
+          start: '2023-01-16T16:00:00'
+        },
+        {
+          title: 'Conference',
+          start: '2023-01-11',
+          end: '2023-01-13'
+        },
+        {
+          title: 'Meeting',
+          start: '2023-01-12T10:30:00',
+          end: '2023-01-12T12:30:00'
+        },
+        {
+          title: 'Lunch',
+          start: '2023-01-12T12:00:00'
+        },
+        {
+          title: 'Meeting',
+          start: '2023-01-12T14:30:00'
+        },
+        {
+          title: 'Happy Hour',
+          start: '2023-01-12T17:30:00'
+        },
+        {
+          title: 'Dinner',
+          start: '2023-01-12T20:00:00'
+        },
+        {
+          title: 'Birthday Party',
+          start: '2023-01-13T07:00:00'
+        },
+        {
+          title: 'Click for Google',
+          url: 'http://google.com/',
+          start: '2023-01-28'
+        }
+      ]
+    });
+
+    calendar.render();
+  });
 
