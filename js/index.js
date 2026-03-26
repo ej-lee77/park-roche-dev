@@ -25,7 +25,7 @@ let header = document.querySelector("header");
 let headerHeight = header.offsetHeight;
 let mainSliderHeight = document.querySelector(".main-slider-wrap").offsetHeight;
 let topBtn = document.querySelector('.top-btn');
-let reserveWrap = document.querySelector(".reserve-btn");
+let reserveBtn = document.querySelector(".reserve-btn");
 
 // 스크롤에 따라서 보여주기 숨기기
 document.addEventListener("scroll", ()=>{
@@ -39,10 +39,10 @@ document.addEventListener("scroll", ()=>{
 
     if(sPos < mainSliderHeight){
         topBtn.style.display = "none";
-        reserveWrap.style.display = "none";
+        reserveBtn.style.display = "none";
     }else{
         topBtn.style.display = "block";
-        reserveWrap.style.display = "block";
+        reserveBtn.style.display = "block";
     }
 });
 
@@ -109,7 +109,6 @@ document.addEventListener('DOMContentLoaded', function() {
 	calendar.render();
 });
 
-
 // calendar
 // 달력 시작날을 오늘로 하기
 const date = new Date();
@@ -119,87 +118,99 @@ const day = ('0' + (date.getDate())).slice(-2);
 const today = `${year}-${month}-${day}`;
 
 document.addEventListener('DOMContentLoaded', function() {
-    var calendarEl = document.getElementById('calendar');
+  var calendarEl = document.getElementById('calendar');
 
-    var calendar = new FullCalendar.Calendar(calendarEl, {
-      headerToolbar: {
-        left: 'title',
-        center: '',
-        right: 'today next,nextYear'
-      },
-      initialDate: today,
-      dayCellContent: function(arg) {
-        return arg.date.getDate();
-      },
-      customButtons: {
-        today: {
-          text: "오늘",
-          click: function () {
-            calendar.today();
-          },
-        },
-      },
-      locale: "ko",
-      selectable: true,
-      dayMaxEvents: true, // allow "more" link when too many events
-      events: [
-        {
-          title: 'All Day Event',
-          start: '2023-01-01'
-        },
-        {
-          title: 'Long Event',
-          start: '2023-01-07',
-          end: '2023-01-10'
-        },
-        {
-          groupId: 999,
-          title: 'Repeating Event',
-          start: '2023-01-09T16:00:00'
-        },
-        {
-          groupId: 999,
-          title: 'Repeating Event',
-          start: '2023-01-16T16:00:00'
-        },
-        {
-          title: 'Conference',
-          start: '2023-01-11',
-          end: '2023-01-13'
-        },
-        {
-          title: 'Meeting',
-          start: '2023-01-12T10:30:00',
-          end: '2023-01-12T12:30:00'
-        },
-        {
-          title: 'Lunch',
-          start: '2023-01-12T12:00:00'
-        },
-        {
-          title: 'Meeting',
-          start: '2023-01-12T14:30:00'
-        },
-        {
-          title: 'Happy Hour',
-          start: '2023-01-12T17:30:00'
-        },
-        {
-          title: 'Dinner',
-          start: '2023-01-12T20:00:00'
-        },
-        {
-          title: 'Birthday Party',
-          start: '2023-01-13T07:00:00'
-        },
-        {
-          title: 'Click for Google',
-          url: 'http://google.com/',
-          start: '2023-01-28'
-        }
-      ]
-    });
-
-    calendar.render();
+  var calendar = new FullCalendar.Calendar(calendarEl, {
+    headerToolbar: {
+      left: 'prev',
+      center: 'title',
+      right: 'next'
+    },
+    initialDate: today,
+    dayCellContent: function(arg) {
+      return arg.date.getDate();
+    },
+    // customButtons: {
+    //   today: {
+    //     text: "오늘",
+    //     click: function () {
+    //       calendar.today();
+    //     },
+    //   },
+    // },
+    locale: "ko",
+    selectable: true,
+    dayMaxEvents: true, // allow "more" link when too many events
+    // events: [
+    //   {
+    //     title: 'All Day Event',
+    //     start: '2023-01-01'
+    //   },
+    //   {
+    //     title: 'Long Event',
+    //     start: '2023-01-07',
+    //     end: '2023-01-10'
+    //   },
+    //   {
+    //     groupId: 999,
+    //     title: 'Repeating Event',
+    //     start: '2023-01-09T16:00:00'
+    //   },
+    //   {
+    //     groupId: 999,
+    //     title: 'Repeating Event',
+    //     start: '2023-01-16T16:00:00'
+    //   },
+    //   {
+    //     title: 'Conference',
+    //     start: '2023-01-11',
+    //     end: '2023-01-13'
+    //   },
+    //   {
+    //     title: 'Meeting',
+    //     start: '2023-01-12T10:30:00',
+    //     end: '2023-01-12T12:30:00'
+    //   },
+    //   {
+    //     title: 'Lunch',
+    //     start: '2023-01-12T12:00:00'
+    //   },
+    //   {
+    //     title: 'Meeting',
+    //     start: '2023-01-12T14:30:00'
+    //   },
+    //   {
+    //     title: 'Happy Hour',
+    //     start: '2023-01-12T17:30:00'
+    //   },
+    //   {
+    //     title: 'Dinner',
+    //     start: '2023-01-12T20:00:00'
+    //   },
+    //   {
+    //     title: 'Birthday Party',
+    //     start: '2023-01-13T07:00:00'
+    //   },
+    //   {
+    //     title: 'Click for Google',
+    //     url: 'http://google.com/',
+    //     start: '2023-01-28'
+    //   }
+    // ]
   });
 
+  calendar.render();
+});
+
+// 에약팝업띄우기
+let reserveWrap = document.querySelector(".reserve-wrap");
+
+reserveBtn.addEventListener("click", ()=>{
+  reserveWrap.classList.add("active");
+});
+
+let reserveCloseBtn = document.querySelector(".reserve-wrap .close-btn");
+
+reserveCloseBtn.addEventListener("click", ()=>{
+  reserveWrap.classList.remove("active");
+});

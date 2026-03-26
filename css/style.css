@@ -616,10 +616,14 @@ footer{
     left: 50%;
     transform: translate(-50%, -50%);
     width: 505px;
-    height: 600px;
+    height: 0;
+    transition: 0.3s;
     overflow-y: scroll;
     background: #816C5B;
     z-index: 10000;
+}
+.reserve-wrap.active{
+    height: 600px;
 }
 .reserve-wrap>h2{
     margin-top: 20px;
@@ -641,6 +645,13 @@ footer{
     margin-top: 10px;
     padding: 0 10px;
 }
+#calendar .fc-button-primary {
+    background-color: unset;
+    border: none;
+}
+#calendar .fc-button-primary:focus {
+    box-shadow: none;
+}
 /* #calendar .fc-scroller{
     overflow: hidden !important;
 } */
@@ -650,10 +661,37 @@ footer{
     margin: 20px 0;
     font-size: 1.3em;
 }
+.reserve-wrap{
+    .room,
+    .adult,
+    .child{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        div{
+            display: flex;
+            align-items: center;
+
+            span{
+                display: inline-block;
+                width: 50px;
+                text-align: center;
+            }
+        }
+    }
+}
+
 .reserve-wrap .select-box h3{
     font-size: 0.88rem;
 }
 .reserve-wrap .select-box>div{
     margin-top: 10px;
 }
+.reserve-wrap .select-box button{
+    background: #fef8f2;
+    border: none;
+    border-radius: 5px;
+}
+
 
